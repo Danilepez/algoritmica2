@@ -16,7 +16,7 @@ int n, a[MAX_N];
 int gcd(int a, int b) {
     if (b == 0) return a;
     return gcd(b, a % b);
-}
+};
 
 struct node{
     int sum, mult , min, max, gcd;
@@ -42,7 +42,7 @@ void init(int inicio, int final, int nodoActual) {
         segmentTree[nodoActual].min = min(segmentTree[nodoIzquierdo].min, segmentTree[nodoDerecho].min);
         segmentTree[nodoActual].gcd = gcd(segmentTree[nodoIzquierdo].gcd, segmentTree[nodoDerecho].gcd);
     } 
-}
+};
 
 
 node query(int inicio, int final, int nodoActual, int izquierda, int derecha ) {
@@ -68,7 +68,7 @@ node query(int inicio, int final, int nodoActual, int izquierda, int derecha ) {
         result.gcd = gcd(maxIzquierdo.gcd, maxDerecho.gcd); 
         return result;
     }      
-}
+};
 
 void update(int inicio, int final, int nodoActual, int posicion, int valor ) {
     if(posicion < inicio || posicion > final ) {
@@ -94,14 +94,12 @@ void update(int inicio, int final, int nodoActual, int posicion, int valor ) {
         segmentTree[nodoActual].min = min(segmentTree[nodoIzquierdo].min, segmentTree[nodoDerecho].min);  // inf
 
     }
-}
+};
 
 int main() {
-
-}
     input;
     cin>>n;
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i < n; i++) {    
         cin>>a[i];
     }
     // Inicializar Segment Tree 
@@ -130,4 +128,3 @@ int main() {
     }*/
     return 0;
 }
-
