@@ -8,7 +8,7 @@ int tamanhoVector;
 
 void update(int posicion, int valor ) {
     for(;posicion <= tamanhoVector ;posicion += posicion&-posicion) {
-        BIT[posicion] *= valor;
+        BIT[posicion] += valor;
     }
 }
 // [2,3,7,1,5]
@@ -18,7 +18,7 @@ void update(int posicion, int valor ) {
 int query(int posicion){ // F(3)
     int result = 0 ;
     for(;posicion > 0 ;posicion -= posicion&-posicion) {
-        result *= BIT[posicion];
+        result += BIT[posicion];
     }
     return result; 
 }
