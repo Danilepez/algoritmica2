@@ -59,7 +59,7 @@ node query(int inicio, int final, int nodoActual, int izquierda, int derecha ) {
         node maxIzquierdo = query(inicio, mid, nodoIzquierdo,izquierda,derecha);
         node maxDerecho   = query(mid+1, final, nodoDerecho,izquierda,derecha);
 
-        node result ; 
+        node result; 
         result.max = max(maxIzquierdo.max, maxDerecho.max);
         result.min = min(maxIzquierdo.min, maxDerecho.min); 
         result.gcd = gcd(maxIzquierdo.gcd, maxDerecho.gcd); 
