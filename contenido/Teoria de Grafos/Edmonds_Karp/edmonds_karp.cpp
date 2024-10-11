@@ -33,7 +33,7 @@ int maxFlow(int s,int t) {
         }
        
         if(path[t]==-1) { // si llego a t el path tiene que ser diferente a -1
-            break;
+            break; //rompe el while
         }
         int minFlow = 1e9; // infinito
         for(int from = path[t],to = t; from!=to ; from = path[to = from]) {
