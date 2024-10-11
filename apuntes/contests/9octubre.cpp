@@ -14,7 +14,7 @@ using namespace std;
 
 //Recursividad 
 
-int battle(vector<int> ratings) {
+/*int battle(vector<int> ratings) {
     if (ratings.size() == 1) {
         return ratings[0];
     } 
@@ -53,7 +53,7 @@ int battle(vector<int> ratings) {
     }
     
     return 0;  
-}
+}*/
 
 
 int main(){
@@ -67,7 +67,21 @@ int main(){
         for(int i = 0; i < fighters; i++){
             cin>>ratings[i];
         }
-        cout<<battle(ratings)<<endl;
+        if(ratings.size() == 2){
+            //cout << "solo 2" <<endl;
+            cout << ratings[1]-ratings[0]<<endl;
+        } else {
+          long long suma = 0; // Se cambió a long long para evitar errores
+            for(int i = 0; i < fighters-2; i++){
+                suma += ratings[i];
+                //cout << "Step: " << suma<< endl;  // Para ver el progreso
+                //cout << "en: " << i<< endl;
+                //cout << "en array: " << ratings.size()<< endl;
+            }
+            suma = ratings[fighters-2]-suma;
+            suma = ratings[fighters-1]-suma;
+            cout << suma<< endl;
+        }
     }
     return 0;
 }
