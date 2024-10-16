@@ -77,11 +77,12 @@ int main() {
         memset(grafo, 0, sizeof(grafo));
 
         // Leer cada arista (from, to, capacidad)
-        for (int i = 0; i < aristas; i++) {
-            int from, to, capacidad;
-            cin >> from >> to >> capacidad;
-            grafo[from][to] = capacidad;  // Configurar la capacidad de la arista
-            grafo[to][from] = 0;      // Configurar la capacidad residual de la arista
+        for(int i=0;i<aristas;i++) {
+            int from, to, capacity; 
+            cin>>from>>to>>capacity;
+            grafo[from][to] = capacity;          // camino capacidad
+            //grafo[to][from] = 0;                //  flujo camino residual  //se borra para poder añadir aristas de retorno (grafo residual)
+           
         }
 
         // Calcular el flujo máximo desde el nodo fuente (s) hasta el sumidero (t)

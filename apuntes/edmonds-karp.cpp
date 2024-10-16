@@ -76,7 +76,7 @@ int maxFlow(int s,int t,int &iteraciones) {
 int main() {
 // Iniciar el cronómetro
     auto start = chrono::high_resolution_clock::now();
-    input;
+    
     int nodes, aristas, iteraciones = 0; 
     while(cin>>nodes && nodes) {
         int s = 1;
@@ -87,7 +87,8 @@ int main() {
           int from, to, capacity; 
             cin>>from>>to>>capacity;
             grafo[from][to] = capacity;          // camino capacidad
-            grafo[to][from] = 0;                //  flujo camino residual 
+            //grafo[to][from] = 0;                //  flujo camino residual  //se borra para poder añadir aristas de retorno (grafo residual)
+           
         }
         cout<<"Flujo máximo: " << maxFlow(s,t,iteraciones)<<endl;
         cout << "Número de iteraciones: " << iteraciones << endl;
