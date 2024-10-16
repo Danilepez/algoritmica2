@@ -63,6 +63,10 @@ int maxFlow(int s, int t,int &iteraciones) {
     return flujoMaximo;
 }
 int main() {
+
+    // Iniciar el cronómetro
+    auto start = chrono::high_resolution_clock::now();
+    
     input;
     int nodes, aristas, iteraciones = 0;
     
@@ -84,14 +88,6 @@ int main() {
         cout<<"Flujo máximo: " << maxFlow(s,t,iteraciones)<<endl;
         cout << "Número de iteraciones: " << iteraciones << endl;
     }
-
-
-    // Iniciar el cronómetro
-    auto start = chrono::high_resolution_clock::now();
-
-    // Aquí va tu código principal o la función que deseas medir
-    // Ejemplo:
-    // maxFlow(s, t);
 
     // Detener el cronómetro
     auto end = chrono::high_resolution_clock::now();
