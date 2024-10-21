@@ -19,7 +19,7 @@ using namespace std;
 
 
 bool f(long long mid, long long x){
-    return mid*mid >= x;
+    return mid*mid >= x; //para hallar raiz cuadradan  
 }
 
 int binarySearch(long long n){
