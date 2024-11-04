@@ -13,9 +13,7 @@ def descomponer_en_cuadrados(n):
             "cuadrados": f"{raiz}²",
             "min_cuadrados": 1
         }
-
-
-
+    
     # Crear una lista donde dp[i] será el número mínimo de cuadrados que suman i
     dp = [float('inf')] * (n + 1)
     dp[0] = 0  # Caso base: la suma de 0 es 0 cuadrados
